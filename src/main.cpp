@@ -106,8 +106,8 @@ void loop() {
                 usbcon.button(XBOX_RSHOULDER, tmp=psx.buttonPressed(PSB_R1)); hasPress |= tmp;
 
 
-                usbcon.sliderLeft(psx.getAnalogButton(PSAB_L2) > 2 ? 255 : 0);
-                usbcon.sliderRight(psx.getAnalogButton(PSAB_R2) > 2 ? 255 : 0);
+                usbcon.sliderLeft(psx.getAnalogButton(PSAB_L2));
+                usbcon.sliderRight(psx.getAnalogButton(PSAB_R2));
 
                 if (hasPress)
                     GPIOC->regs->ODR &= ~(1 << 13);
